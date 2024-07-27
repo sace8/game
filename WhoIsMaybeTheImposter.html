@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhoIsMaybeTheImposter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">WhoIsMaybeTheImposter</h1>
+        <div class="lobby" id="lobby">
+            <div class="name-input">
+                <input type="text" id="nameInput" placeholder="Enter your name...">
+                <button onclick="joinLobby()">Join Lobby</button>
+            </div>
+            <div class="players-list" id="playersList">
+                <!-- List of players will be shown here -->
+            </div>
+            <button id="startButton" onclick="startGame()" style="display: none;">Start Game</button>
+        </div>
+        <div class="chat-box" id="chatBox" style="display: none;">
+            <div class="chat-content" id="chatContent">
+                <!-- Chat messages will go here -->
+            </div>
+        </div>
+        <div class="chat-input" id="chatInput" style="display: none;">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="voting-box" id="votingBox" style="display: none;">
+            <div class="round-info">
+                <p id="roundCounter">Round: 1</p>
+            </div>
+            <div class="voting-options">
+                <select id="voteSelect">
+                    <option value="">Vote for an Imposter or Skip</option>
+                    <!-- Options for players will be dynamically added here -->
+                </select>
+                <button onclick="submitVote()">Submit Vote</button>
+            </div>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyBfEGTOiRCeFNcP_KxeH6z-FHSmkwf3MAU",
+              authDomain: "who-is-maybe-the-imposte-ba687.firebaseapp.com",
+              projectId: "who-is-maybe-the-imposte-ba687",
+              storageBucket: "who-is-maybe-the-imposte-ba687.appspot.com",
+              messagingSenderId: "265442857711",
+              appId: "1:265442857711:web:a1fb2c924b47de7cd0c11a",
+              measurementId: "G-2H9CL65NZY"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
